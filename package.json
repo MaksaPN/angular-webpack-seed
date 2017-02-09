@@ -1,0 +1,47 @@
+{
+  "name": "lazy-load-test",
+  "version": "1.0.0",
+  "description": "testing angular webpack integration",
+  "scripts": {
+    "start": "webpack-dev-server --inline --progress --port 8080",
+    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
+    "postinstall": "typings install"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@angular/common": "2.4.6",
+    "@angular/compiler": "2.4.6",
+    "@angular/core": "2.4.6",
+    "@angular/forms": "2.4.6",
+    "@angular/http": "2.4.6",
+    "@angular/platform-browser": "2.4.6",
+    "@angular/platform-browser-dynamic": "2.4.6",
+    "@angular/platform-server": "2.4.6",
+    "@angular/router": "3.4.6",
+    "core-js": "^2.4.1",
+    "rxjs": "5.0.2",
+    "zone.js": "0.7.6"
+  },
+  "devDependencies": {
+    "angular2-router-loader": "^0.3.4",
+    "angular2-template-loader": "^0.6.0",
+    "awesome-typescript-loader": "~3.0.0-beta.18",
+    "css-loader": "^0.26.0",
+    "extract-text-webpack-plugin": "^2.0.0-beta",
+    "file-loader": "^0.10.0",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.28.0",
+    "open-browser-webpack-plugin": "0.0.3",
+    "phantomjs-prebuilt": "^2.1.14",
+    "raw-loader": "^0.5.1",
+    "reflect-metadata": "^0.1.9",
+    "rimraf": "^2.5.4",
+    "style-loader": "^0.13.1",
+    "ts-loader": "^2.0.0",
+    "typescript": "^2.1.6",
+    "typings": "^2.1.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0",
+    "webpack-merge": "^2.6.1"
+  }
+}
