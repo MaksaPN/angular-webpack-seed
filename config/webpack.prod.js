@@ -23,6 +23,9 @@ module.exports = webpackMerge(commonConfig, {
             comments: false,
             sourceMap: false
         }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: ['app', 'vendor', 'polyfills']
+        }),
         new ExtractTextPlugin('[name].[hash].css'),
         new webpack.DefinePlugin({
             'process.env': {

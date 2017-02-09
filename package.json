@@ -26,6 +26,7 @@
     "angular2-router-loader": "^0.3.4",
     "angular2-template-loader": "^0.6.0",
     "awesome-typescript-loader": "~3.0.0-beta.18",
+    "chunk-manifest-webpack-plugin": "^1.0.0",
     "css-loader": "^0.26.0",
     "extract-text-webpack-plugin": "^2.0.0-beta",
     "file-loader": "^0.10.0",
@@ -41,6 +42,7 @@
     "typescript": "^2.1.6",
     "typings": "^2.1.0",
     "webpack": "^2.2.1",
+    "webpack-chunk-hash": "^0.4.0",
     "webpack-dev-server": "^2.3.0",
     "webpack-merge": "^2.6.1"
   }
