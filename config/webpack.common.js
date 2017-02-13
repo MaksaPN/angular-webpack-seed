@@ -29,16 +29,6 @@ module.exports = {
             {
                 test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
                 use: 'file?name=assets/[name].[hash].[ext]'
-            },
-            {
-                test: /\.css$/,
-                exclude: helpers.root('src', 'app'),
-                use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css?sourceMap' })
-            },
-            {
-                test: /\.css$/,
-                include: helpers.root('src', 'app'),
-                use: 'raw'
             }
         ]
     },

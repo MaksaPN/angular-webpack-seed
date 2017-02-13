@@ -1,0 +1,16 @@
+nav.about {
+    background: lightgreen;
+    ul {
+        margin: 10px;
+        padding: 10px;
+        list-style: none;
+    }
+    li {
+        display: inline-block;
+    }
+    a {
+        display: block;
+        padding: 12px 18px;
+        text-decoration: none;
+    }
+}

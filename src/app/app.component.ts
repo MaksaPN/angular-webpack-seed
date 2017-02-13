@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import './styles.scss';
 
 @Component({
   selector: 'my-app',
