@@ -9,6 +9,6 @@ export class AboutComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
-        console.log("test");
+        console.log('navigated to about...');
     }
 }

@@ -1,9 +1,10 @@
 var webpack = require('webpack');
 var webpackMerge = require('webpack-merge');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var ManifestPlugin = require('webpack-manifest-plugin');
 
 const extractSass = new ExtractTextPlugin({
-    filename: "[name].[contenthash].css"
+    filename: "[name].[chunkhash:8].css"
 });
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
@@ -16,8 +17,8 @@ module.exports = webpackMerge(commonConfig, {
     output: {
         path: helpers.root('dist'),
         publicPath: '/',
-        filename: '[name].[hash].js',
-        chunkFilename: '[id].[hash].chunk.js'
+        filename: '[name].[chunkhash:8].js',
+        chunkFilename: '[id].[chunkhash:8].chunk.js'
     },
 
     module: {
@@ -45,6 +46,7 @@ module.exports = webpackMerge(commonConfig, {
             'process.env': {
                 'ENV': JSON.stringify(ENV)
             }
-        })
+        }),
+        new ManifestPlugin()
     ]
 });
