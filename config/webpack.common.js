@@ -17,6 +17,10 @@ module.exports = {
         extensions: ['.js', '.ts']
     },
 
+    output: {
+        publicPath: 'http://localhost:8080/'
+    },
+
     module: {
         rules: [
             {
@@ -35,24 +39,22 @@ module.exports = {
     },
 
     plugins: [
-
         new HtmlWebpackPlugin({
             template: 'src/index.html',
             favicon: 'favicon.ico',
         }),
-
         new webpack.ContextReplacementPlugin(
             /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
             __dirname
         ),
-
+        new webpack.optimize.CommonsChunkPlugin({
+            name: ['app', 'vendor', 'polyfills']
+        }),
         new OpenBrowserPlugin({
             url: 'http://localhost:8080'
         }),
-
         new CopyWebpackPlugin([
             { from: 'i18n/', to: 'i18n' }
         ]),
-
     ]
 };

@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var webpackMerge = require('webpack-merge');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 const extractSass = new ExtractTextPlugin({
     filename: "[name].[contenthash].css"
 });
@@ -39,9 +40,6 @@ module.exports = webpackMerge(commonConfig, {
             compress: { warnings: false },
             comments: false,
             sourceMap: false
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: ['app', 'vendor', 'polyfills']
         }),
         new webpack.DefinePlugin({
             'process.env': {
