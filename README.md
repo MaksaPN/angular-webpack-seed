@@ -10,6 +10,7 @@ Quickstart project for bootstraping your Angular 2+ application using Webpack 2
   2. Using resources (.html, .css, .jpg, .ico etc.)
   3. Separated vendor, polyfills and app files.
   4. Compiling and minifying resources for production, with hashed filenames and source maps.
+  5. Manifest json file support to allow for caching of unchanged files when building.
 5. Using ng2-translate to setup internationalization.
 
 # Running the app
