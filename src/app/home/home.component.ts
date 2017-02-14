@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TranslateService} from 'ng2-translate/ng2-translate';
 
 import './home.component.scss'
 
@@ -7,7 +8,7 @@ import './home.component.scss'
     templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
-    constructor() { }
-
+    constructor(public translate: TranslateService) {
+    }
     ngOnInit() { }
 }

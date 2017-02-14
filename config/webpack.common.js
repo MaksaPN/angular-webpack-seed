@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var helpers = require('./helpers');
 
@@ -47,6 +48,11 @@ module.exports = {
 
         new OpenBrowserPlugin({
             url: 'http://localhost:8080'
-        })
+        }),
+
+        new CopyWebpackPlugin([
+            { from: 'i18n/', to: 'i18n' }
+        ]),
+
     ]
 };
