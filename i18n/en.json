@@ -1,9 +1,9 @@
 {
-    "home": {
-        "title": "Home page"
-    },
-    "about": {
-        "title": "About page",
-        "message": "I'm lazy loaded!"
-    }
+  "home": {
+    "title": "Home page"
+  },
+  "about": {
+    "title": "About page",
+    "message": "I'm lazy loaded!"
+  }
 }

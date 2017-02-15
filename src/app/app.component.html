@@ -1,19 +1,19 @@
 <nav>
-    <ul>
-        <li>
-            <a routerLink="/home" routerLinkActive="active">Home</a>
-        </li>
-        <li>
-            <a routerLink="/about" routerLinkActive="active">About (lazy)</a>
-        </li>
-    </ul>
+  <ul>
+    <li>
+      <a routerLink="/home" routerLinkActive="active">Home</a>
+    </li>
+    <li>
+      <a routerLink="/about" routerLinkActive="active">About (lazy)</a>
+    </li>
+  </ul>
 </nav>
 
-        <label>
-            Language
-            <select #langSelect (change)="translate.use(langSelect.value)">
-                <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
-            </select>
-        </label>
+<label>
+  Language
+  <select #langSelect (change)="translate.use(langSelect.value)">
+    <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+  </select>
+</label>
 
 <router-outlet></router-outlet>

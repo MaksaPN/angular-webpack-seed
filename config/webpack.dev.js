@@ -3,39 +3,39 @@ var webpackMerge = require('webpack-merge');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
-    filename: "[name].css"
+  filename: "[name].css"
 });
 
 var helpers = require('./helpers');
 var commonConfig = require('./webpack.common.js');
 
 module.exports = webpackMerge(commonConfig, {
-    devtool: 'cheap-module-eval-source-map',
+  devtool: 'cheap-module-eval-source-map',
 
-    output: {
-        filename: '[name].js',
-        chunkFilename: '[id].chunk.js'
-    },
+  output: {
+    filename: '[name].js',
+    chunkFilename: '[id].chunk.js'
+  },
 
-    module: {
-        rules: [{
-            test: /\.scss$/,
-            loader: extractSass.extract({
-                loader: [
-                    { loader: 'css-loader' },
-                    { loader: 'sass-loader' }
-                ],
-                fallbackLoader: 'style-loader'
-            })
-        }]
-    },
+  module: {
+    rules: [{
+      test: /\.scss$/,
+      loader: extractSass.extract({
+        loader: [
+          { loader: 'css-loader' },
+          { loader: 'sass-loader' }
+        ],
+        fallbackLoader: 'style-loader'
+      })
+    }]
+  },
 
-    plugins: [
-        extractSass
-    ],
+  plugins: [
+    extractSass
+  ],
 
-    devServer: {
-        historyApiFallback: true,
-        stats: 'minimal'
-    }
+  devServer: {
+    historyApiFallback: true,
+    stats: 'minimal'
+  }
 });
