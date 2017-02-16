@@ -19,13 +19,13 @@ module.exports = webpackMerge(commonConfig, {
 
   module: {
     rules: [{
-      test: /\.scss$/,
-      loader: extractSass.extract({
+      test: /\.scss|\.sass$/,
+      use: extractSass.extract({
         loader: [
           { loader: 'css-loader' },
           { loader: 'sass-loader' }
         ],
-        fallbackLoader: 'style-loader'
+        fallback: 'style-loader'
       })
     }]
   },

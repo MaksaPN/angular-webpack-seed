@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const helpers = require('./helpers');
 
@@ -56,5 +57,8 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: 'i18n/', to: 'i18n' }
     ]),
+    new StyleLintPlugin({
+      configBasedir: '/'
+    })
   ]
 };
