@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
+var OfflinePlugin = require('offline-plugin');
 
 const extractSass = new ExtractTextPlugin({
   filename: "[name].[chunkhash:8].css"
@@ -47,6 +48,7 @@ module.exports = webpackMerge(commonConfig, {
         'ENV': JSON.stringify(ENV)
       }
     }),
-    new ManifestPlugin()
+    new ManifestPlugin(),
+    new OfflinePlugin()
   ]
 });
